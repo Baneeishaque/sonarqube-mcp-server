@@ -1,0 +1,408 @@
+# Instincts generated from https://github.com/Baneeishaque/sonarqube-mcp-server
+# Generated: 2026-05-04T11:57:07.102Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: sonarqube-mcp-server-commit-ticket-ref
+trigger: "when writing a commit message"
+confidence: 0.75
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Commit Ticket Ref
+
+## Action
+
+Include ticket reference matching pattern: ^([A-Z]+-\d+)
+
+## Evidence
+
+- Ticket pattern detected in commits
+- Pattern: ^([A-Z]+-\d+)
+
+---
+id: sonarqube-mcp-server-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Commit Length
+
+## Action
+
+Write moderate-length commit messages (~65 characters)
+
+## Evidence
+
+- Average commit message length: 65 chars
+- Based on 5 commits
+
+---
+id: sonarqube-mcp-server-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: sonarqube-mcp-server-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: sonarqube-mcp-server-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: sonarqube-mcp-server-test-colocate
+trigger: "when writing tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Test Colocate
+
+## Action
+
+Place test file next to the source file (e.g., Button.test.tsx next to Button.tsx)
+
+## Evidence
+
+- Colocated test pattern detected
+- Tests live alongside source files
+
+---
+id: sonarqube-mcp-server-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: sonarqube-mcp-server-workflow-update-dependencies
+trigger: "when doing update dependencies"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Workflow Update Dependencies
+
+## Action
+
+Follow the update-dependencies workflow:
+1. Update dependency version in relevant configuration files (e.g., gradle.lockfile, gradle/libs.versions.toml, build.gradle.kts, .github/workflows/*.yml).
+2. Commit changes with a message referencing the dependency and new version.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: gradle.lockfile, gradle/libs.versions.toml, its/build.gradle.kts
+
+---
+id: sonarqube-mcp-server-workflow-feature-or-behavior-change-with-tests
+trigger: "when doing feature or behavior change with tests"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Workflow Feature Or Behavior Change With Tests
+
+## Action
+
+Follow the feature-or-behavior-change-with-tests workflow:
+1. Modify or add implementation files in src/main/java/...
+2. Update or add test files in src/test/java/... or its/src/test/java/...
+3. Update configuration or resource files if needed (e.g., Dockerfile, resources).
+4. Commit all related changes together.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/main/java/**, src/test/java/**, its/src/test/java/**
+
+---
+id: sonarqube-mcp-server-instinct-class-naming
+trigger: "When creating a new Java class file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Class Naming
+
+## Action
+
+Name the file and class using PascalCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+- Pattern in codeStyle.namingConventions.files
+
+---
+id: sonarqube-mcp-server-instinct-function-naming
+trigger: "When defining a new Java method/function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: sonarqube-mcp-server-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: sonarqube-mcp-server-instinct-import-style
+trigger: "When importing Java classes or packages"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: sonarqube-mcp-server-instinct-export-style
+trigger: "When exporting classes or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: sonarqube-mcp-server-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Test Location
+
+## Action
+
+Place test files in src/test/java/ or its/src/test/java/ (colocated with source structure)
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+- Pattern in workflows.feature-or-behavior-change-with-tests.filesInvolved
+
+---
+id: sonarqube-mcp-server-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Test Type
+
+## Action
+
+Write unit tests
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: sonarqube-mcp-server-instinct-test-pattern
+trigger: "When naming test files"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Test Pattern
+
+## Action
+
+Use the *.test.ts pattern for test files
+
+## Evidence
+
+- Pattern in testing.filePattern
+
+---
+id: sonarqube-mcp-server-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Git Commit Format
+
+## Action
+
+Start the commit message with a ticket reference in the format [TICKET-ID] (e.g., MCP-420), followed by a concise description
+
+## Evidence
+
+- Pattern in commits.ticketPattern
+- Examples: 'MCP-420 Remove redundant warning about bind address'
+
+---
+id: sonarqube-mcp-server-instinct-update-dependencies
+trigger: "When someone wants to update a dependency or tool version"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Update Dependencies
+
+## Action
+
+Update the relevant configuration files (gradle.lockfile, gradle/libs.versions.toml, its/build.gradle.kts, its/gradle.lockfile, .github/workflows/*.yml), then commit changes with a message referencing the dependency and new version
+
+## Evidence
+
+- Workflow: update-dependencies
+- Seen in commits: 'MCP-459 Update SonarSource/ci-github-actions action to v1.3.35 (#384)'
+
+---
+id: sonarqube-mcp-server-instinct-feature-change-with-tests
+trigger: "When adding a new feature or modifying existing behavior"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: Baneeishaque/sonarqube-mcp-server
+---
+
+# Sonarqube Mcp Server Instinct Feature Change With Tests
+
+## Action
+
+Modify or add implementation files in src/main/java/, update or add test files in src/test/java/ or its/src/test/java/, update configuration or resource files if needed, and commit all related changes together
+
+## Evidence
+
+- Workflow: feature-or-behavior-change-with-tests
+- Pattern in workflows.feature-or-behavior-change-with-tests.commitSequence
+
