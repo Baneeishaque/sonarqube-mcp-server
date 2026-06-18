@@ -1,0 +1,6 @@
+interface:
+  display_name: "Sonarqube Mcp Server"
+  short_description: "Repo-specific patterns and workflows for sonarqube-mcp-server"
+  default_prompt: "Use the sonarqube-mcp-server repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
